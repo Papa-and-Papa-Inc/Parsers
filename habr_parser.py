@@ -31,6 +31,7 @@ def habr_parser(data, sites_cnt):
             #else:
                 #print('TOO OLD! -- ' + link)
         except:
+            i+=1
             continue
             # print("There is no page:", link) 
              

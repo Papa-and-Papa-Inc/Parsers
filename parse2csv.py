@@ -33,7 +33,7 @@ def merge_csv():
         df = pd.read_csv(file)
         mergedCSV.append(df)
 
-    df = pd.concat(mergedCSV, ignore_index=True)
+    df = pd.concat(mergedCSV, ignore_index=False)
     df.to_csv('articles.csv')
 
     return

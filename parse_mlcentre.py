@@ -41,7 +41,7 @@ def parse_mlcentre(data, sites_cnt):
         os.mkdir('mlcentre')
 
     # Enumeration of possible options for article numbers
-    for iter in range(100000, 100000+sites_cnt):
+    for iter in range(200043, 200043+sites_cnt):
         if iter % 10000 == 0:
             print("MLcentre:", iter)
 
