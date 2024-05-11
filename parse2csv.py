@@ -26,12 +26,14 @@ Libraries:
 '''
 def merge_csv():
     csvFiles = glob.glob('*.{}'.format('csv'))
-    mergedCSV = pd.DataFrame()
+    print(csvFiles)
+    mergedCSV = []
 
     for file in csvFiles:
         df = pd.read_csv(file)
-        mergedCSV = mergedCSV.append(df, ignore_index=True)
+        mergedCSV.append(df)
 
-    df.to_csv('articles.csv', sep='\t')
+    df = pd.concat(mergedCSV, ignore_index=True)
+    df.to_csv('articles.csv')
 
     return

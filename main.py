@@ -8,8 +8,8 @@ def main():
     habr_data = []
     mlcentre_data = []
 
-    thread_habr = Thread(target = habr_parser, args = [habr_data, 50])
-    thread_mlcentre = Thread(target = parse_mlcentre, args = [mlcentre_data, 50])
+    thread_habr = Thread(target = habr_parser, args = [habr_data, 900000])
+    thread_mlcentre = Thread(target = parse_mlcentre, args = [mlcentre_data, 900000])
 
     thread_habr.start()
     thread_mlcentre.start()

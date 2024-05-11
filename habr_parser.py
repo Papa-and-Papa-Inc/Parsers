@@ -13,6 +13,8 @@ def habr_parser(data, sites_cnt):
 
     i = 1
     while i < 1+sites_cnt:
+        if i % 10000 == 0:
+            print("Habr:", i)
         try:
             link = url + f'{i}'
             article = Article(link)
@@ -25,13 +27,13 @@ def habr_parser(data, sites_cnt):
                 file.write(text)
                 file.close() 
                 data.append(["habr", link, rel_path])
-                print("SUCCESS:", link)
-            else:
-                print('TOO OLD! -- ' + link)
+                #print("SUCCESS:", link)
+            #else:
+                #print('TOO OLD! -- ' + link)
         except:
-            print("There is no page:", link)    
-
-    
+            continue
+            # print("There is no page:", link) 
+             
         i+=1
     
     return data
