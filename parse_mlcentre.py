@@ -15,7 +15,10 @@ Libraries:
     requests
 '''
 def check_link(link):
-    response = requests.get(link)
+    try:
+        response = requests.get(link)
+    except:
+        return 0
     
     # Site status = response[200] (available)
     if str(response) == '<Response [200]>':
@@ -33,7 +36,7 @@ def parse_mlcentre():
     url = 'https://mlcentre.ru/articles/'
 
     # Enumeration of possible options for article numbers
-    for iter in range(200000, 1000000):
+    for iter in range(100000, 200000):
         curData = []
         curUrl = url + str(iter)
     
