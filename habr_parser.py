@@ -1,10 +1,10 @@
 from newspaper import Article
 import os
 
-def habr_parser():
+def habr_parser(data, sites_cnt):
     url = 'https://habr.com/articles/'
 
-    data = []
+    #data = []
 
     path = os.getcwd()
     os.chdir(path)
@@ -12,7 +12,7 @@ def habr_parser():
         os.mkdir('habr')
 
     i = 1
-    while i < 1000:
+    while i < 1+sites_cnt:
         try:
             link = url + f'{i}'
             article = Article(link)
@@ -35,4 +35,3 @@ def habr_parser():
         i+=1
     
     return data
-
