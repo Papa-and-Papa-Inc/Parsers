@@ -6,7 +6,7 @@ data2csv - function for converting a data array into csv format
 
 Arguments: 
     data - an array with site data like: src, link, content
-    src - a string containing information about the site from which the articles were parsed
+    src - a string containing information about the site from which the articles were parsed (only title, without domain)
 
 Libraries:
     pandas: pip install pandas
