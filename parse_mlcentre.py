@@ -32,7 +32,7 @@ parse_mlcentre - function for parsing from the Mlcentre website
 Libraries:
     newspaper: pip install newspaper3k; pip install lxml-html-clean
 '''
-def parse_mlcentre():
+def parse_mlcentre(data):
     url = 'https://mlcentre.ru/articles/'
 
     # Enumeration of possible options for article numbers
@@ -65,6 +65,3 @@ def parse_mlcentre():
             data.append(curData)
         else:
             print('Skip', iter)
-
-parse_mlcentre()
-parse2csv.data2csv(data, src)
